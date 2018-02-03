@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-plugin-documentreader" version="0.1.0">
+        id="cordova-plugin-documentreader" version="0.2.1">
     <name>DocumentReader</name>
     <description>Cordova plugin for identification documents reading and validation</description>
     <license>commercial</license>
