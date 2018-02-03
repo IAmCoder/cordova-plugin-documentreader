@@ -9,23 +9,9 @@ cordova plugin add cordova-plugin-documentreader --variable CAMERA_USAGE_DESCRIP
 
 ## Usage
 You can get trial license for demo application at [licensing.regulaforensics.com](https://licensing.regulaforensics.com) (`regula.license` file).
-
-InitializeReader:
-```
-DocumentReader.initReader(
-    license,
-    function (result) {
-        // result will contain array of json results.
-    },
-    function () {
-        alert("Error calling DocumentReader Plugin");
-    }
-);
-```
-
-ScanDocument:
 ```
 DocumentReader.scanDocument(
+    license,
     function (result) {
         // result will contain array of json results.
     },
@@ -53,20 +39,13 @@ onDeviceReady: function() {
             fileEntry.file(function(file) {
                 var reader = new FileReader();
                 reader.onloadend = function(e) {
-                    DocumentReader.initReader(
+                    DocumentReader.scanDocument(
                         this.result,
                         function (message) {
-                            DocumentReader.scanDocument(
-                                function (message) {
-                                    alert(message);
-                                },
-                                function () {
-                                    alert("Error calling Plugin");
-                                }
-                            );
+                            alert(message);
                         },
                         function () {
-                            alert("Error calling Plugin");
+                            alert("Error calling Hello Plugin");
                         }
                     );
                 }
